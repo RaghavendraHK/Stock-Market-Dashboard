@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Stock Market Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+    <header>
+        <h1>📊 Stock Market Dashboard</h1>
+        <p>Live Stock Prices</p>
+    </header>
+
+    <div class="search-container">
+        <input type="text" id="searchBar" placeholder="Search stock symbol (e.g., AAPL, TSLA)...">
+        <button onclick="searchStock()">Search</button>
+    </div>
+
+    <div id="stockDetails" class="stock-details" style="display:none;">
+        <button class="close-btn" onclick="closeDetails()">✕</button>
+        <h2 id="detailSymbol"></h2>
+        <div id="detailInfo"></div>
+        <canvas id="priceChart"></canvas>
+    </div>
+
+    <main class="dashboard">
+        <div class="stock-card">
+            <h3>Apple (AAPL)</h3>
+            <p id="aapl">Loading...</p>
+        </div>
+
+        <div class="stock-card">
+            <h3>Google (GOOGL)</h3>
+            <p id="googl">Loading...</p>
+        </div>
+
+        <div class="stock-card">
+            <h3>Microsoft (MSFT)</h3>
+            <p id="msft">Loading...</p>
+        </div>
+    </main>
+
+    <footer>
+        <button onclick="fetchStocks()">Refresh Prices</button>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
